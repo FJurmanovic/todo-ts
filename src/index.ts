@@ -1,10 +1,5 @@
 import App from './components/app'
 
-var render = function (template: any, node: any) {
-	node.innerHTML = template;
-};
+let todoList = require('./model/todo.json'); 
 
-var app = document.getElementById("app");
-
-
-render (App(), app);
+document.querySelector('#app')?.appendChild(App(todoList))

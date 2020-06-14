@@ -1,10 +1,11 @@
 import App from './components/app';
 import Add from './components/add';
 
+import { lists } from './components/list';
 
-export let todoList = require('./model/todo.json'); 
+
 
 let appID = document.querySelector('#app');
 
 appID?.appendChild(Add())
-appID?.appendChild(App(todoList))
+appID?.appendChild(App(lists.get()))

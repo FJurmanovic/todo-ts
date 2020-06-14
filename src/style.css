@@ -1,0 +1,210 @@
+* {    
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+}
+
+.root {
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+.input {
+    flex: 1;
+    margin-left: 8px;
+}
+.section{
+    display: inline-block;
+}
+.inputb {
+    width: 290px;
+}
+.iconButton {
+    padding: 10px;
+    right: 0;
+}
+.divider {
+    height: 28px;
+    margin: 4px;
+}
+.add{
+    margin: 0 auto;
+    width: 400px;
+    height: 30px;
+}
+
+.add > input {
+    width: 80%;
+    height: 100%;
+    font-size: 12pt;
+}
+
+.add > button {
+    float: right;
+    width: 18%;
+    height: 100%;
+    font-size: 12pt;
+}
+
+.alignmain{
+    margin: 0 auto;
+    width: 100%;
+}
+.main{
+    margin: 0 auto;
+    width: 850px;
+    font-family: 'Roboto', sans-serif;
+}
+.todo {
+    background-color: #e3e3e3;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-right: 5px;
+    width: 418px;
+}
+
+.complete {
+    background-color: #e3e3e3;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-left: 5px;
+    position: absolute;
+    width: 418px;
+}
+
+.todo .title, .complete .title {
+    text-align: center;
+    margin: 4px;
+    font-weight: 600;
+}
+
+.todo .cb, .complete .cb{
+    margin-right: 5px;
+}
+.todo .ib, .complete .ib{
+    margin-left: 15px;
+}
+
+br{
+    clear: both;
+}
+
+.item{
+    margin: 8px;
+    width: 400px;
+    background-color: #ffffff;
+    height: 40px;
+    border-radius: .25em;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.item:hover {
+    background-color: #e3e3e3;
+}
+
+.item input, .item .section{
+    margin-top: 8px;
+    padding: 3px 2px;
+}
+
+.item input[type="checkbox"] {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: initial;
+    margin: -3px 8px;
+    background-color: #e3e3e3;
+    border: 2px solid #929292;
+    border-radius: .3em;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.item input[type="checkbox"]:checked {
+    background-color: #ff9494;
+    border-color: #fb8080;
+}
+
+.item input[type="checkbox"]:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: -5px;
+	color: #ffffff;
+}
+
+.item .ib{
+    float: right;
+}
+.item .Paper{
+    padding: 3px 2px;
+}
+.item .Paper:hover{
+    background-color: #e3e3e3;
+}
+.section .text{
+    width: 290px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: -5px;
+}
+.section .text .tooltiptext {
+    visibility: hidden;
+    background-color: #222222;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+  }
+  .text:hover .tooltiptext {
+    visibility: visible;
+  }
+
+@media only screen and (max-width: 860px){
+    .todo, .complete {
+        display: block;
+        position: relative;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .main {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .item {
+        width: 100%;
+    }
+
+    .Paper {
+        width: calc(100vw - 34px);
+    }
+
+    .section {
+        width: calc(100vw / 2);
+    }
+
+    .todo, .complete {
+        width: 100%;
+    }
+
+    .add {
+        width: 96vw;
+    }
+    .root {
+        
+        width: 96vw;
+    }
+}

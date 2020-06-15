@@ -156,15 +156,6 @@ br{
 	color: #ffffff;
 }
 
-.item .ib{
-    float: right;
-}
-.item .Paper{
-    padding: 3px 2px;
-}
-.item .Paper:hover{
-    background-color: #e3e3e3;
-}
 .section .text{
     width: 290px;
     display: inline-block;
@@ -173,7 +164,7 @@ br{
     white-space: nowrap;
     margin-bottom: -5px;
 }
-.section .text .tooltiptext {
+.section .tooltiptext {
     visibility: hidden;
     background-color: #222222;
     color: #fff;
@@ -183,7 +174,7 @@ br{
     position: absolute;
     z-index: 1;
   }
-  .text:hover .tooltiptext {
+  .text:hover ~ .tooltiptext {
     visibility: visible;
   }
 
@@ -201,13 +192,10 @@ br{
 }
 
 @media only screen and (max-width: 425px){
-    .item {
-        width: 100%;
+    .item { 
+        width: calc(100vw - 19px);
     }
 
-    .Paper {
-        width: calc(100vw - 34px);
-    }
 
     .section {
         width: calc(100vw / 2);

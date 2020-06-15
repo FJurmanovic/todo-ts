@@ -10,14 +10,14 @@ export default function renderItem(item) {
     const textDiv = document.createElement("div");
     textDiv.className = "text";
     textDiv.innerHTML = `${item.text}`
+    textDiv.setAttribute("contenteditable", "true")
 
     const tooltipDiv = document.createElement("div");
     tooltipDiv.className = "tooltiptext";
     tooltipDiv.innerHTML = `${item.text}`
     
-    textDiv.append(tooltipDiv)
-
     sectionDiv.append(textDiv)
+    sectionDiv.append(tooltipDiv)
 
     itemInput.setAttribute("type", "checkbox")
     if(item.checked) {

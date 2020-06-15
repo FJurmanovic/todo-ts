@@ -178,6 +178,22 @@ br{
     visibility: visible;
   }
 
+.remove {
+    position: absolute;
+    right: 12px;
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.remove div {
+    transform: scale(.8);
+}
+
+.remove:hover {
+    background-color: #b8b8b8;
+}
+
 @media only screen and (max-width: 860px){
     .todo, .complete {
         display: block;

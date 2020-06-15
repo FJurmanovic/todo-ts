@@ -39,8 +39,24 @@ export default function renderItem(item, listId = 0, itemId = (lists.get()[0].it
         itemInput.setAttribute("checked", "true")
     }
     itemInput.addEventListener("change", handleCheck)
+
+    const removeDiv = document.createElement("div");
+    removeDiv.className = "remove btn btn-icon-round";
+    removeDiv.addEventListener("click", function() {
+        const itemNode:Node = this.parentNode || new Node;
+        const categoryNode:Node = itemNode.parentNode?.parentNode || new Node;
+        if (textDiv.getAttribute("data") !== textDiv.innerHTML) {
+            lists.removeItem(elementId(categoryNode), elementId(itemNode))
+            categoryNode.childNodes[1].removeChild(itemNode)
+        }
+    })
+    const removeIcon = document.createElement("div");
+    removeIcon.className = "gg-trash-empty"
+    removeDiv.appendChild(removeIcon)
+
     itemDiv.appendChild(itemInput)
     itemDiv.appendChild(sectionDiv)
+    itemDiv.appendChild(removeDiv)
     
     return itemDiv
 }

@@ -30,6 +30,9 @@ export var lists = function() {
         },
         changeText: function(newText:string, listId:number, itemId:number) {
             todoList[listId].items[itemId].text = newText
+        },
+        removeItem: function(listId:number, itemId:number) {
+            todoList[listId].items.splice(itemId, 1)
         }
     }
 }();

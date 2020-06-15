@@ -10,9 +10,27 @@ export default function handleCheck () {
     let catID = (category.id == "todo_items") ? 0 : 1
     
     lists.switch(catID, elementId(item));
+    
+    //changeEvent(catID, elementId(item), item)
 
     console.log(lists.get())
 
     category.removeChild(item)
     target?.append(item)
+}
+
+function changeEvent(listId:number, itemId:number, item) {
+   
+    item.removeEventListener("blur", () => {})
+    item.addEventListener("blur", function () {
+        
+        if (item.getAttribute("data") !== item.innerHTML) {
+            console.log(catID, elementId(item))
+            if (listId == 0) {
+                lists.changeText(item.innerHTML, 1, elementId(item))
+            }else if (listId == 1) {
+                lists.changeText(item.innerHTML, 0, elementId(item))
+            }
+        }
+    });
 }

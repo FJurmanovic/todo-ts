@@ -11,7 +11,7 @@ const App = (list: any[]) => {
         const itemContainer = document.createElement("div");
         itemContainer.id = `${category.title}_items`
         category.items.map((item:any[], id:number) => {
-            itemContainer.appendChild(renderItem(item))
+            itemContainer.appendChild(renderItem(item, key, id))
         })
         catDiv.appendChild(itemContainer)
         listDiv.appendChild(

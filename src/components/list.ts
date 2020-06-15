@@ -27,6 +27,9 @@ export var lists = function() {
         changeChecked: function(listId:number, itemId:number) {
             let item = todoList[listId].items[itemId]
             todoList[listId].items[itemId].checked = !item.checked
+        },
+        changeText: function(newText:string, listId:number, itemId:number) {
+            todoList[listId].items[itemId].text = newText
         }
     }
 }();

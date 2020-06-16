@@ -2,7 +2,8 @@ import handleCheck from './checkChanged';
 import { lists } from './list';
 import elementId from './elementId';
 
-export default function renderItem(item, listId = 0, itemId = (lists.get()[0].items.length - 1)) {
+
+export default function renderItem(item:any, listId = 0, itemId = (lists.get()[0].items.length - 1)) {
 
 
     const itemDiv = document.createElement("div");

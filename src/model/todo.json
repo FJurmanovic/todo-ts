@@ -2,31 +2,11 @@
     {
         "title": "todo",
         "items": [
-            {
-                "checked": false,
-                "text": "item1"
-            },
-            {
-                "checked": false,
-                "text": "item2"
-            }
         ]
     },
     {
         "title": "complete",
         "items": [
-            {
-                "checked": true,
-                "text": "item3"
-            },
-            {
-                "checked": true,
-                "text": "item4"
-            },
-            {
-                "checked": true,
-                "text": "item5"
-            }
         ]
     }
 ]

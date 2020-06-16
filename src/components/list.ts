@@ -1,6 +1,6 @@
 export var lists = function() {
-    let todoList = require('../model/todo.json'); 
-
+    let listFromStorage = JSON.parse(localStorage.getItem("lists"))
+    let todoList = listFromStorage || require('../model/todo.json');
     return {
         get: function() {
             return todoList
@@ -12,6 +12,7 @@ export var lists = function() {
                     text: text
                 }
             )
+            localStorage.setItem("lists", JSON.stringify(todoList));
         },
         switch: function(listId:number, itemId:number) {
             
@@ -23,16 +24,20 @@ export var lists = function() {
                 todoList[0].items.push(item)
             }
             todoList[listId].items.splice(itemId, 1)
+            localStorage.setItem("lists", JSON.stringify(todoList));
         },
         changeChecked: function(listId:number, itemId:number) {
             let item = todoList[listId].items[itemId]
             todoList[listId].items[itemId].checked = !item.checked
+            localStorage.setItem("lists", JSON.stringify(todoList));
         },
         changeText: function(newText:string, listId:number, itemId:number) {
             todoList[listId].items[itemId].text = newText
+            localStorage.setItem("lists", JSON.stringify(todoList));
         },
         removeItem: function(listId:number, itemId:number) {
             todoList[listId].items.splice(itemId, 1)
+            localStorage.setItem("lists", JSON.stringify(todoList));
         }
     }
 }();

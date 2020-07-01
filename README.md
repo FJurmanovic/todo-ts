@@ -9,7 +9,7 @@
 - [x] Checkboxes switch between lists
 - [x] Removing items
 - [x] Tooltip that shows full text when hovering over it
-- [ ] Usage of cookies
+- [x] Local storage
 - [x] Editing items when press on text
 
 ____

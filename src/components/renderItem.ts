@@ -2,7 +2,6 @@ import handleCheck from './checkChanged';
 import { lists } from './list';
 import elementId from './elementId';
 
-
 export default function renderItem(item:any, listId = 0, itemId = (lists.get()[0].items.length - 1)) {
 
 
@@ -12,7 +11,7 @@ export default function renderItem(item:any, listId = 0, itemId = (lists.get()[0
     const sectionDiv = document.createElement("div");
     sectionDiv.className = "section";
 
-    const textDiv = document.createElement("div");
+    const textDiv = document.createElement("span");
     textDiv.className = "text";
     textDiv.innerHTML = `${item.text}`
     textDiv.setAttribute("contenteditable", "true")
@@ -23,7 +22,9 @@ export default function renderItem(item:any, listId = 0, itemId = (lists.get()[0
         const itemNode:Node = this.parentNode?.parentNode || new Node;
         const categoryNode:Node = itemNode.parentNode?.parentNode || new Node;
         if (textDiv.getAttribute("data") !== textDiv.innerHTML) {
-            console.log(lists.get())
+            textDiv.innerHTML = textDiv.innerHTML.replace(/<br>/g, '');
+            textDiv.removeAttribute("data");
+            textDiv.setAttribute("data", textDiv.innerHTML);
             lists.changeText(textDiv.innerHTML, elementId(categoryNode), elementId(itemNode))
         }
     });

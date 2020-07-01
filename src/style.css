@@ -73,7 +73,6 @@ body {
 .main{
     margin: 0 auto;
     width: 850px;
-    font-family: 'Roboto', sans-serif;
 }
 .todo {
     background-color: #e3e3e3;
@@ -97,7 +96,8 @@ body {
 .todo .title, .complete .title {
     text-align: center;
     margin: 4px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .todo .cb, .complete .cb{
@@ -117,34 +117,37 @@ br{
     background-color: #ffffff;
     height: 40px;
     border-radius: .25em;
+    font-size: 17px;
+    font-weight: 500;
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
 }
 
 .item:hover {
-    background-color: #e3e3e3;
+    background-color: #eeeeee;
 }
 
 .item input, .item .section{
-    margin-top: 8px;
+    margin-top: 5px;
     padding: 3px 2px;
 }
 
 .item input[type="checkbox"] {
+    font-family: 'Roboto', sans-serif;
     -webkit-appearance: none;
     box-sizing: border-box;
     appearance: none;
     background-color: initial;
     margin: -3px 8px;
-    background-color: #e3e3e3;
+    background-color: #ffffff;
     border: 2px solid #929292;
-    border-radius: .3em;
+    border-radius: .2em;
     padding: 8px;
     cursor: pointer;
 }
 
 .item input[type="checkbox"]:checked {
-    background-color: #ff9494;
-    border-color: #fb8080;
+    background-color: #ff6868;
+    border-color: transparent;
 }
 
 .item input[type="checkbox"]:checked:after {
@@ -156,14 +159,41 @@ br{
 	color: #ffffff;
 }
 
+
 .section .text{
     width: 290px;
     display: inline-block;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: -5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 100%;
+    max-height: 2em;
 }
+
+.section [contenteditable="true"].text {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.section [contenteditable="true"].text * {
+    display: inline;
+    white-space: nowrap;
+}
+
+.section [contenteditable="true"].text::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.section [contenteditable="true"].text br {
+    display: none;
+}
+
 .section .tooltiptext {
     visibility: hidden;
     background-color: #222222;

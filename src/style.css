@@ -172,6 +172,23 @@ br{
     max-height: 2em;
 }
 
+.section .text::after {
+    visibility: hidden;
+    content: attr(data);
+    background-color: #222222;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.section .text:hover::after {
+    visibility: visible;
+}
+
+
 .section [contenteditable="true"].text {
     white-space: nowrap;
     overflow-x: auto;
@@ -204,6 +221,7 @@ br{
     position: absolute;
     z-index: 1;
   }
+
   .text:hover ~ .tooltiptext {
     visibility: visible;
   }

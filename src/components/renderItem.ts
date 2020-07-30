@@ -42,10 +42,8 @@ export default function renderItem(item:any, listId = 0, itemId = (lists.get()[0
     removeDiv.addEventListener("click", function() {
         const itemNode:Node = this.parentNode || new Node;
         const categoryNode:Node = itemNode.parentNode?.parentNode || new Node;
-        if (textDiv.getAttribute("data") !== textDiv.innerHTML) {
-            lists.removeItem(elementId(categoryNode), elementId(itemNode));
-            categoryNode.childNodes[1].removeChild(itemNode);
-        }
+        lists.removeItem(elementId(categoryNode), elementId(itemNode));
+        categoryNode.childNodes[1].removeChild(itemNode);
     })
     const removeIcon = document.createElement("div");
     removeIcon.className = "gg-trash-empty";

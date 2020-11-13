@@ -1,6 +1,6 @@
 # Todo List Typescript
 ## by Yurma
-### Simple todo list application equivalent to [Todo-List](https://yurma.wtf/todo-list) but created in pure Javascript (typescript) and webpack
+### Simple todo list application equivalent to [Todo-List](https://jurmanovic.com/todo-list) but created in pure Javascript (typescript) and webpack
 
 ### Features:
 
@@ -13,4 +13,4 @@
 - [x] Editing items when press on text
 
 ____
-## Check it live on github-pages: [Todo-ts](https://yurma.wtf/todo-ts)
+## Check it live on github-pages: [Todo-ts](https://jurmanovic.com/todo-ts)
